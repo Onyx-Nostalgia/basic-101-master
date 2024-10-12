@@ -1,0 +1,34 @@
+#!/bin/bash
+
+BRANCH_NAME=$(git symbolic-ref --short HEAD)    
+pattern="^[^/]+/([^/]+)/"
+
+if [[ $BRANCH_NAME =~ $pattern ]]; then
+    jira_id="${BASH_REMATCH[1]}"
+
+    # Read the first line from the file .git/COMMIT_EDITMSG
+    first_line=$(head -n 1 "$1")
+
+    # Check if the first line contains a JIRA-ID
+    if [[ $first_line =~ :\ ([A-Z]+-[0-9]+): ]]; then
+        existing_jira_id="${BASH_REMATCH[1]}"
+
+        # Check if the existing JIRA-ID is the same as the desired one
+        if [[ "$existing_jira_id" != "$jira_id" ]]; then
+            # Replace the existing JIRA-ID with the desired one
+            new_line=$(echo "$first_line" | sed "s/$existing_jira_id/$jira_id/")
+            sed -i.bak "1s|.*|$new_line|" "$1"
+            echo "JIRA-ID updated in commit message."
+        else
+            echo "JIRA-ID already present."
+        fi
+    else
+        # Add the JIRA-ID pattern to the first line
+        new_line="${first_line/:/: $jira_id:}"
+        sed -i.bak "1s|.*|$new_line|" "$1"
+        echo "JIRA-ID added to commit message."
+    fi
+
+else
+    echo "WARNING!! JIRA-ID not found in the branch name."
+fi
