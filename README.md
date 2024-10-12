@@ -1,6 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=%3EBasic-101&fontSize=90&animation=fadeIn&fontAlignY=38&desc=but%20advance%20and%20best%20practices&descAlignY=51&descAlign=60)
 
-แหล่งรวบรวม ความรู้พื้นฐาน และ Best Practices 
+แหล่งรวบรวมความรู้พื้นฐานและ Best Practices 
 
 <details>
 <summary>Table of Contents</summary>
