@@ -5,7 +5,8 @@
 <details>
 <summary>Table of Contents</summary>
 
-[[_TOC_]]
+<!--ts-->
+<!--te-->
 
 </details>
 
