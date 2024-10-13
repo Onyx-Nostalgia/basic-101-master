@@ -176,7 +176,7 @@ Refs: 676104e, a215868, COMMIT-ID
 
 ใครที่ใช้ vscode สามารถใช้ Extension เสริม เช่น [vscode-git-commit](https://marketplace.visualstudio.com/items?itemName=rioukkevin.vscode-git-commit) เรามี Config มาให้นำไปใช้กันเพียงนำไปเพิ่มใน settings (`Wins + Shift + p` search `User settings (JSON)`)
 
-<script src="https://gist.github.com/Onyx-Nostalgia/418cee0fa5d7996c45705841d15922c7.js"></script>
+[![gists-readme](https://gists-readme.yizack.com/api/pin?id=418cee0fa5d7996c45705841d15922c7)](https://gist.github.com/Onyx-Nostalgia/418cee0fa5d7996c45705841d15922c7)
 
 **Preview**
 
